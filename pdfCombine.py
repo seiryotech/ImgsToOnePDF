@@ -40,11 +40,9 @@ for folderName in os.listdir(rootFolderPath):
 
     with open(outputPdfPath, "wb") as f:
         convert_target = []
-        print(folderPath)
         for j in os.listdir(folderPath):
             convert_target.append(Image.open(folderPath + "\\" + j).filename)
 
-        print('len:{}'.format(len(convert_target)))
         write_target = img2pdf.convert(
             natsorted(convert_target))  # 文字列順に並び替えてPDF変換
 
